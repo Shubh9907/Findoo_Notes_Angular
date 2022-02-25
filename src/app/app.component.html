@@ -1,0 +1,11 @@
+<div class="page">
+    <div class="header" *ngIf="auth==null">
+        <app-header></app-header>
+    </div>
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+    <div>
+        <app-footer></app-footer>
+    </div>
+</div>

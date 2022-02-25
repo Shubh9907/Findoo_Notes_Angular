@@ -1,0 +1,14 @@
+package com.bridgelabz.fundoo_notes.service;
+
+import com.bridgelabz.fundoo_notes.dto.NoteDto;
+import com.bridgelabz.fundoo_notes.utility.ApiResponse;
+
+public class NoteService implements INoteService{
+
+	@Override
+	public ApiResponse addNote(NoteDto noteDto) {
+		
+		return null;
+	}
+
+}

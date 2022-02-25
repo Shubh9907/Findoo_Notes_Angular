@@ -1,0 +1,14 @@
+package com.bridgelabz.fundoo_notes.utility;
+
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
+
+@Component
+public class EventScheduler {
+	
+	@Scheduled(fixedRate = 1000)
+	public void cronJobSch() {
+		System.out.println("Cron Job Works");
+	}
+
+}

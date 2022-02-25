@@ -1,0 +1,88 @@
+<div class="dashboard">
+    <header class="p-3 bg-dark text-white" style="display: flex; flex-direction: row;">
+
+        <mat-icon aria-hidden="false" aria-label="view list" (click)="drawer.toggle()">view list</mat-icon>
+        <div class="container">
+
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li>Fundoo</li>
+                </ul>
+
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                    <input type="search" class="form-control form-control-dark" placeholder="Search..."
+                        aria-label="Search">
+                </form>
+
+                <div class="text-end">
+                    <button type="button" (click)="logout()" class="btn btn-warning">Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <mat-drawer-container class="example-container">
+        <mat-drawer #drawer class="example-sidenav" mode="side">
+            <div style="display: flex; flex-direction: column;">
+                <div routerLink="notes" style="display: flex; flex-direction: row; align-items: center;">
+                    <mat-icon aria-hidden="false">notes</mat-icon>
+                    <button mat-button>Notes</button>
+                </div>
+                <div style="display: flex; flex-direction: row; align-items: center;">
+                    <mat-icon aria-hidden="false">alarm</mat-icon>
+                    <button mat-button>Reminders</button>
+                </div>
+                <div style="display: flex; flex-direction: row; align-items: center;">
+                    <mat-icon aria-hidden="false">edit</mat-icon>
+                    <button mat-button>Edit Labels</button>
+                </div>
+                <div routerLink="archive" style="display: flex; flex-direction: row; align-items: center;">
+                    <mat-icon aria-hidden="false">archive</mat-icon>
+                    <button mat-button>Archive</button>
+                </div>
+                <div routerLink="trash" style="display: flex; flex-direction: row; align-items: center;">
+                    <mat-icon aria-hidden="false">delete</mat-icon>
+                    <button mat-button>Trash</button>
+                </div>
+            </div>
+        </mat-drawer>
+        <div class="example-sidenav-content" style="background-color: white;">
+
+            <div class="note-container" style="min-height: 850px;">
+                <div class="add-Note-card" style="padding: 20px;">
+                    <mat-expansion-panel hideToggle>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Add Note Here
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <form (ngSubmit)="onSubmit()">
+                            <div class="form-group">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Note Title</mat-label>
+                                    <input [(ngModel)]="note.title" name="title" matInput placeholder="Note Title"
+                                        required>
+                                </mat-form-field>
+                            </div>
+                            <div class="form-group">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Note Body</mat-label>
+                                    <textarea [(ngModel)]="note.noteBody" name="noteBody" matInput
+                                        placeholder="Note Body" required></textarea>
+                                </mat-form-field>
+                            </div>
+                            <mat-expansion-panel-header>
+                                <button mat-button color="primary" type="submit">Add</button>
+                            </mat-expansion-panel-header>
+                        </form>
+                    </mat-expansion-panel>
+                </div>
+                <div class="all-notes" style="margin-left: 80px;">
+                    <!-- <app-note-card></app-note-card> -->
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+    </mat-drawer-container>
+</div>

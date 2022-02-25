@@ -1,0 +1,16 @@
+body{
+    background-color: azure;
+}
+
+.page{
+    display: flex;
+    flex-direction: column;
+    height:970px;
+    justify-content: space-between;
+}
+
+.main-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

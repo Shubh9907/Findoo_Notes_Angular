@@ -1,0 +1,42 @@
+<div class="register">
+  <div class="form">
+    <main class="form-register">
+      <h1 class="h3 mb-3 fw-normal">Please register here</h1>
+      <form (ngSubmit) = "onSubmit()">
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Full Name</mat-label>
+            <input [(ngModel)] = "user.name" name="name" matInput placeholder="Full Name">
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Email Id</mat-label>
+            <input [(ngModel)] = "user.email" name="email" matInput placeholder="Email Id">
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>Contact Number</mat-label>
+            <input [(ngModel)] = "user.number" name="Number" matInput placeholder="Contact Number">
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <div class="example-container">
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input [(ngModel)] = "user.password" name="password" matInput [type]="hide ? 'password' : 'text'" placeholder="Password">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+        </div>
+        <br>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
+        <p class="mt-5 mb-3 text-muted" style="display: flex; justify-content: center;">© Fundoo Notes, 2021-2022</p>
+      </form>
+    </main>
+  </div>
+</div>

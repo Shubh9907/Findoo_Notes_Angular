@@ -1,0 +1,33 @@
+.mat-expansion-panel{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    width: 30%;
+}
+
+.add-Note-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+}
+
+mat-expansion-panel{
+    border-radius: 20px;
+}
+
+.mat-form-field{
+    display: flex;
+    flex-direction: column;
+}
+
+
+::ng-deep .mat-drawer{
+    border: none;
+}
+
+.example-container {
+    width: auto;
+    height: 100%;
+  }
+  

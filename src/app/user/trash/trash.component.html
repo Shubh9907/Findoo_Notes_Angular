@@ -1,0 +1,16 @@
+<div class="note-container" (mouseover)="display=true">
+    <div class="note" *ngFor="let note of notes">
+        <mat-card class="example-card" style="width: 250px;" *ngIf="note.inTrash">
+            <mat-card-title>{{note.title}}</mat-card-title>
+            <mat-card-content>
+                <p>{{note.noteBody}}</p>
+            </mat-card-content>
+            <mat-card-actions style="display: flex; flex-direction: row; justify-content: space-around;">
+                <!-- <button mat-button (click)="trashNote(note.id)" >Delete</button> -->
+                <!-- <mat-icon aria-hidden="false" *ngIf="display" (click)="trashNote(note.id)">delete</mat-icon> -->
+                <mat-icon aria-hidden="false" *ngIf="display" (click)="deleteNote(note.id)">delete</mat-icon>
+                <!-- <button mat-button (click)="archieveNote(note.id)">Archieve</button> -->
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    </div>

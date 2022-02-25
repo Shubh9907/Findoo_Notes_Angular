@@ -1,0 +1,19 @@
+package com.bridgelabz.fundoo_notes.exception;
+
+import com.bridgelabz.fundoo_notes.utility.ApiResponse;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
+public class UserException extends RuntimeException {
+
+	ApiResponse response;
+
+    public UserException(ApiResponse message) {
+        this.response = message;
+    }
+}

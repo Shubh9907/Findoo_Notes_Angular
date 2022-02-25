@@ -1,0 +1,26 @@
+header{
+    display: flex;
+    flex-direction: row;
+    background-color: cyan;
+    min-height: 50px;
+}
+
+.header-content{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    margin-top: 7px;
+    width: 100%;
+}
+
+.logo{
+    margin-left: 50px;
+    margin-top: 7px;
+    color: #172677;
+    font-size: 20px;
+    font-style:oblique;
+}
+
+.button {
+    margin-right: 50px;
+}
