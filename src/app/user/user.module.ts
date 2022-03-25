@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { MatButtonModule } from '@angular/material/button'
-import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatIconModule } from '@angular/material/icon'
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
@@ -17,6 +16,17 @@ import { TrashComponent } from './trash/trash.component';
 import { NotesComponent } from './notes/notes.component';
 import { ArchiveComponent } from './archive/archive.component'
 import { RouterModule } from '@angular/router';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatMenuModule} from '@angular/material/menu';
+import { NoteViewComponent } from './note-view/note-view.component';
+import { PinnedNoteViewComponent } from './pinned-note-view/pinned-note-view.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { SearchedNoteComponent } from './searched-note/searched-note.component';
+import { TrashViewComponent } from './trash-view/trash-view.component';
+import { ArchiveViewComponent } from './archive-view/archive-view.component';
+import { EditNoteDialogBoxComponent } from './edit-note-dialog-box/edit-note-dialog-box.component';
+
 
 @NgModule({
   declarations: [
@@ -27,6 +37,14 @@ import { RouterModule } from '@angular/router';
     TrashComponent,
     NotesComponent,
     ArchiveComponent,
+    NoteViewComponent,
+    PinnedNoteViewComponent,
+    ForgotPasswordComponent,
+    ResetPasswordComponent,
+    SearchedNoteComponent,
+    TrashViewComponent,
+    ArchiveViewComponent,
+    EditNoteDialogBoxComponent,
   ],
   imports: [
     CommonModule,
@@ -38,7 +56,9 @@ import { RouterModule } from '@angular/router';
     MatCardModule,
     MatSidenavModule,
     RouterModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDatepickerModule,
+    MatMenuModule,
   ],
   exports: [
     LoginComponent,

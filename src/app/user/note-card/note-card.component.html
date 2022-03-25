@@ -1,17 +1,21 @@
 <div class="note-container">
-    <div class="note" *ngFor="let note of notes">
-        <mat-card class="example-card" style="width: 250px;" *ngIf="!note.inArchieve && !note.inTrash"
-            (mouseover)="displayButton=true" (mouseleave)="displayButton=false">
-            <mat-card-title>{{note.title}}</mat-card-title>
-            <mat-card-content>
-                <p>{{note.noteBody}}</p>
-            </mat-card-content>
-            <mat-card-actions style="display: flex; flex-direction: row; justify-content: space-around;">
-                <!-- <button mat-button (click)="trashNote(note.id)" >Delete</button> -->
-                <mat-icon aria-hidden="false" *ngIf="displayButton" (click)="trashNote(note.id)">delete</mat-icon>
-                <mat-icon aria-hidden="false" *ngIf="displayButton" (click)="trashNote(note.id)">archive</mat-icon>
-                <!-- <button mat-button (click)="archieveNote(note.id)">Archieve</button> -->
-            </mat-card-actions>
-        </mat-card>
+    <div>
+        <div>
+            <h6>PINNED</h6>
+            <div style="display: flex;flex-direction: row; flex-wrap:wrap;">
+                <div *ngFor="let note2 of notes">
+                    <app-pinned-note-view *ngIf="!note2.inArchieve && !note2.inTrash && note2.pined" [note]="note2">
+                    </app-pinned-note-view>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h6 style="margin-top: 20px;">OTHERS</h6>
+            <div style="display: flex;flex-direction: row; flex-wrap:wrap">
+                <div *ngFor="let note1 of notes">
+                    <app-note-view *ngIf="!note1.inArchieve && !note1.inTrash && !note1.pined" [note]="note1"></app-note-view>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

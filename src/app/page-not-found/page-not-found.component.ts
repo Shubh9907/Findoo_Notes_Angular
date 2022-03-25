@@ -15,10 +15,7 @@ export class PageNotFoundComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    this.getUsers();
   }
 
-  private getUsers() {
-    this.userService.getData("/users").subscribe( (data:any) => this.users = data.data);
-  }
+  
 }

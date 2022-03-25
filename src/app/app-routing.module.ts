@@ -8,6 +8,9 @@ import { AuthGuard } from './auth.guard'
 import { NotesComponent } from './user/notes/notes.component';
 import { TrashComponent } from './user/trash/trash.component';
 import { ArchiveComponent } from './user/archive/archive.component';
+import { ForgotPasswordComponent } from './user/forgot-password/forgot-password.component'
+import { ResetPasswordComponent } from './user/reset-password/reset-password.component'
+import { SearchedNoteComponent } from './user/searched-note/searched-note.component'
 
 const routes: Routes = [
   {
@@ -22,6 +25,14 @@ const routes: Routes = [
   {
     path:"register",
     component:RegisterComponent
+  },
+  {
+    path:"forgotpass",
+    component:ForgotPasswordComponent
+  },
+  {
+    path:"resetpass/:token",
+    component:ResetPasswordComponent
   },
   {
     path:"dashboard",
@@ -44,6 +55,10 @@ const routes: Routes = [
       {
         path:"archive",
         component:ArchiveComponent
+      },
+      {
+        path:"search",
+        component:SearchedNoteComponent
       }
     ]
   },

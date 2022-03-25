@@ -1,0 +1,20 @@
+<div class="note-container">
+    <div class="note">
+        <mat-card class="example-card" style="width: 250px; min-height: 140px; background-color: {{note.noteColor}}"
+            (mouseover)="display=true" (mouseleave)="display=false">
+            <div>
+                <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+                    <mat-card-title>{{note.title}}</mat-card-title>
+                </div>
+                <mat-card-content>
+                    <p>{{note.noteBody}}</p>
+                </mat-card-content>
+            </div>
+            <mat-card-actions style="display: flex; flex-direction: row; justify-content: space-evenly;"
+                *ngIf="display">
+                <mat-icon (click)="restoreNote(note.id)">restore_from_trash</mat-icon>
+                <mat-icon (click)="deleteNote(note.id)">delete_forever</mat-icon>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

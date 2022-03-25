@@ -11,9 +11,7 @@ import { UserService } from 'src/app/user.service';
 export class ArchiveComponent implements OnInit {
 
   notes!: Note[];
-  durationInSeconds = 5000;
   token = localStorage.getItem("data");
-  display = false;
 
   constructor(private userService: UserService, private snackBar: MatSnackBar) {
   }
@@ -22,14 +20,10 @@ export class ArchiveComponent implements OnInit {
     this.getNotes();
   }
 
-  openSnackBar(messgae: any) {
-    this.snackBar.open(messgae, 'close', { duration: this.durationInSeconds });
-  }
-
-  longText = "Hello All";
-
   getNotes() {
-    this.userService.getData("/notes").subscribe((data: any) => this.notes = data.data);
+    if (this.token != null) {
+      this.userService.getData("/notes", this.token).subscribe((data: any) => this.notes = data.data);
+    }
   }
 
 }

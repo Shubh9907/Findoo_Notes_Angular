@@ -1,0 +1,26 @@
+<div class="note-container">
+    <div class="note">
+        <mat-card class="example-card" style="width: 250px; min-height: 140px; background-color: {{note.noteColor}} "
+            (mouseover)="displayButton=true" (mouseleave)="displayButton=false">
+            <div >
+                <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+                    <mat-card-title (click)="openDialog()" style="word-wrap: normal; width: 80%;">{{note.title}}</mat-card-title>
+                    <mat-icon *ngIf="displayButton && note.pined" (click)="pin(note.id)">push_pin</mat-icon>
+                </div>
+                <mat-card-content (click)="openDialog()">
+                    <p>{{note.noteBody}}</p>
+                </mat-card-content>
+            </div>
+            <mat-card-actions style="display: flex; flex-direction: row; justify-content: space-around;"
+                *ngIf="displayButton">
+                <mat-icon aria-hidden="false">notifications_none</mat-icon>
+                <mat-icon aria-hidden="false">person_outline</mat-icon>
+                <mat-icon aria-hidden="false">color_lens</mat-icon>
+                <mat-icon aria-hidden="false">image_search</mat-icon>
+                <mat-icon aria-hidden="false" (click)="trashNote(note.id)">delete_outline</mat-icon>
+                <mat-icon aria-hidden="false" (click)="archieveNote(note.id)">archive</mat-icon>
+                <mat-icon aria-hidden="false">more_vert</mat-icon>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

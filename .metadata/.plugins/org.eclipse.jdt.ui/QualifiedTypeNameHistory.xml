@@ -8,4 +8,24 @@
     <fullyQualifiedTypeName name="com.bridgelabz.fundoo_notes.utility.Response"/>
     <fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
     <fullyQualifiedTypeName name="com.bridgelabz.fundoo_notes.utility.ApiResponse"/>
+    <fullyQualifiedTypeName name="org.elasticsearch.client.ElasticsearchClient"/>
+    <fullyQualifiedTypeName name="org.springframework.data.elasticsearch.repository.ElasticsearchRepository"/>
+    <fullyQualifiedTypeName name="org.springframework.data.elasticsearch.annotations.Document"/>
+    <fullyQualifiedTypeName name="org.elasticsearch.action.delete.DeleteRequest"/>
+    <fullyQualifiedTypeName name="org.elasticsearch.action.search.SearchRequest"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="org.elasticsearch.search.builder.SearchSourceBuilder"/>
+    <fullyQualifiedTypeName name="org.elasticsearch.action.search.SearchResponse"/>
+    <fullyQualifiedTypeName name="org.elasticsearch.search.SearchHit"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.databind.ObjectMapper"/>
+    <fullyQualifiedTypeName name="com.bridgelabz.fundoo_notes.entity.Note"/>
+    <fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
+    <fullyQualifiedTypeName name="java.io.UnsupportedEncodingException"/>
+    <fullyQualifiedTypeName name="org.elasticsearch.index.query.QueryBuilders"/>
+    <fullyQualifiedTypeName name="org.elasticsearch.index.query.QueryBuilder"/>
+    <fullyQualifiedTypeName name="org.elasticsearch.common.collect.Map"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestHeader"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>

@@ -41,6 +41,10 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  navToForgotPage() {
+    this.router.navigate(['/forgotpass']);
+  }
+
   onSubmit() {
         this.userService.postRequest(this.user,"/login").subscribe( (data:any) => { this.openSnackBar(data.responseMsg), this.navToDash(data)
         });

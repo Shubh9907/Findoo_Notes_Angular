@@ -1,0 +1,66 @@
+<div style="background-color: {{data.noteColor}}">
+    <form style="padding: 30px;">
+        <div class="form-group">
+            <mat-form-field appearance="standard">
+                <mat-label>Note Title</mat-label>
+                <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+                    <input name="title" matInput value="{{data.title}}" [(ngModel)]="tempTitle"
+                        placeholder="Note Title">
+                    <img *ngIf=" !data.pined" (click)="pin(data.id)" src="../../../assets/pin.svg" width="21px"
+                        height="21px" />
+                    <mat-icon *ngIf=" data.pined" (click)="pin(data.id)">push_pin</mat-icon>
+                </div>
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+            <mat-form-field appearance="standard">
+                <mat-label>Note Body</mat-label>
+                <textarea name="noteBody" matInput value="{{data.noteBody}}" [(ngModel)]="tempBody"
+                    placeholder="Note Body"></textarea>
+            </mat-form-field>
+        </div>
+        <div style="display: flex;flex-direction: row; align-items: center;flex-wrap: wrap;">
+            <div style="width: 80%; display: flex; flex-direction: row; justify-content: space-evenly; flex-wrap:wrap;">
+                <mat-icon aria-hidden="false" [matMenuTriggerFor]="remindMenu">notifications_none</mat-icon>
+                <mat-menu #remindMenu="matMenu">
+                    <mat-form-field appearance="fill" class="example-form-field" (click)="$event.stopPropagation()" style="padding: 0px;">
+                        <mat-label>Choose a date</mat-label>
+                        <input matInput disabled placeholder="DD/MM/YYYY">
+                        <mat-datepicker-toggle matSuffix ></mat-datepicker-toggle>
+                        <!-- <mat-datepicker #datepicker>
+                          <mat-datepicker-actions>
+                            <button mat-button matDatepickerCancel>Cancel</button>
+                            <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                          </mat-datepicker-actions>
+                        </mat-datepicker> -->
+                      </mat-form-field>
+                </mat-menu>
+                <mat-icon aria-hidden="false">person_outlinee</mat-icon>
+                <mat-icon aria-hidden="false" [matMenuTriggerFor]="colorMenu">color_lens
+                </mat-icon>
+                <mat-menu #colorMenu="matMenu">
+                    <div style="display: flex; justify-content: space-evenly; width: 250px;">
+                        <mat-icon style="background-color: antiquewhite;" (click)="setNoteColor('antiquewhite')">
+                        </mat-icon>
+                        <mat-icon style="background-color: aquamarine;" aria-hidden="false"
+                            (click)="setNoteColor('aquamarine')"></mat-icon>
+                        <mat-icon style="background-color: palegreen;" aria-hidden="false"
+                            (click)="setNoteColor('palegreen')"></mat-icon>
+                        <mat-icon style="background-color: lightcoral" aria-hidden="false"
+                            (click)="setNoteColor('lightcoral')"></mat-icon>
+                        <mat-icon style="background-color: lightsalmon;" aria-hidden="false"
+                            (click)="setNoteColor('lightsalmon')"></mat-icon>
+                    </div>
+                </mat-menu>
+                <mat-icon aria-hidden="false">image_search</mat-icon>
+                <mat-icon aria-hidden="false" (click)="trashNote(data.id)">delete_outline</mat-icon>
+                <mat-icon aria-hidden="false" (click)="archieveNote(data.id)">archive</mat-icon>
+                <mat-icon aria-hidden="false">more_vert</mat-icon>
+            </div>
+
+            <div>
+                <button mat-button color="primary" (click)="closeDialog();" type="submit">save</button>
+            </div>
+        </div>
+    </form>
+</div>
